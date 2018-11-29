@@ -4,8 +4,10 @@
   "private": true,
   "proxy": "http://localhost:5000/",
   "dependencies": {
+    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "mocha": "^5.2.0",
     "moment": "^2.22.2",
     "nodemon": "^1.18.7",
     "react": "^16.6.3",
@@ -17,7 +19,7 @@
     "client": "react-scripts start",
     "server": "nodemon --watch server server/server.js",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "node_modules/.bin/mocha",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -31,7 +33,10 @@
   ],
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "nock": "^10.0.2"
+  },
   "author": "Daniel MacKay",
   "license": "ISC"
 }
