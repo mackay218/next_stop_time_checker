@@ -7,18 +7,16 @@ import axios from 'axios';
 function getTodaysRoutes() {
   console.log ('in getTodaysRoutes');
   
-  let uneededVar = 0;
-
-  axios.get('/api/nextStopRouter', uneededVar)
+  axios.get('/api/nextStopRouter')
     .then((response) => {
       console.log(response);
-      return
+      return response.data;
     })
     .catch((error) => {
       console.log('error getting todays routes', error);
       alert('error getting todays routes', error);
     });
-}
+}//end getTodaysRoutes
 
 class App extends Component {
 

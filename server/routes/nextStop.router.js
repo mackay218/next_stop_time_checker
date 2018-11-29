@@ -6,9 +6,7 @@ const axios = require('axios');
 router.get('/', (req, res) => {
     console.log('in get todays routes router');
 
-    let uneededVar = 0;
-
-    axios.get(`https://svc.metrotransit.org/NexTrip/Routes?format=json`, uneededVar)
+    axios.get(`https://svc.metrotransit.org/NexTrip/Routes?format=json`)
         .then((response) => {
             if(response.data.length > 0){
                 console.log('got todays routes');
@@ -19,6 +17,6 @@ router.get('/', (req, res) => {
             console.log('error getting todays routes', error);
             res.sendStatus(500);
         });
-});
+}); //end get route
 
 module.exports = router;
