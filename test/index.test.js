@@ -26,7 +26,7 @@ describe('Get route info tests', () => {
 
         it('Get route directions by route number', () => {
             return getRouteDirections('901')
-                .then(response => {
+                .then((response) => {
                     //check that test response is an object
                     expect(typeof testResponse).to.equal('object');
 

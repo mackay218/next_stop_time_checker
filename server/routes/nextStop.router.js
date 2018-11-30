@@ -20,10 +20,20 @@ router.get('/', (req, res) => {
 }); //end get route
 
 //GET route to get directions available for chosen route
-router.get('/directions', (req, res) => {
-    let chosenRoute = req.body;
+router.get('/directions/:routeNum', (req, res) => {
+    let chosenRoute = req.params.routeNum;
+    console.log('in get directions router', chosenRoute);
 
-    console.log(chosenRoute);
+    axios.get(`http://svc.metrotransit.org/NexTrip/Directions/${chosenRoute}`)
+        .then((response) => {
+            console.log(response);
+            res.send(response.data);
+        })
+        .catch((error) => {
+            console.log('error getting directions for route', error);
+            res.sendStatus(500);
+        })
+
 }); //end get directions route
 
 module.exports = router;
