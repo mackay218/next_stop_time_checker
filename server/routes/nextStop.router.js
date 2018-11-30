@@ -19,4 +19,11 @@ router.get('/', (req, res) => {
         });
 }); //end get route
 
+//GET route to get directions available for chosen route
+router.get('/directions', (req, res) => {
+    let chosenRoute = req.body;
+
+    console.log(chosenRoute);
+}); //end get directions route
+
 module.exports = router;
