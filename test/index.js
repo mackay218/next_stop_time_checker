@@ -12,8 +12,14 @@ module.exports = {
     },//end getTodaysRoutes
     
     getRouteDirections(routeNum) {
-        console.log(' in getRouteDirections');
+        console.log('in getRouteDirections');
     
-        return axios.get(`https://svc.metrotransit.org/NexTrip/Directions/${routeNum}?format=json`)
-    }//end getRouteDirections
+        return axios.get(`https://svc.metrotransit.org/NexTrip/Directions/${routeNum}?format=json`);
+    },//end getRouteDirections
+
+    getStops(routeNum, directionNum) {
+        console.log('in getStops');
+
+        return axios.get(`https://svc.metrotransit.org/NexTrip/Stops/${routeNum}/${directionNum}?format=json`);
+    }//end getStops
 }

@@ -71,7 +71,6 @@ class App extends Component {
         console.log(response.data);
 
         this.setState({
-          ...this.state,
           route: routeNum,
           directions: response.data,
         });
@@ -125,6 +124,18 @@ class App extends Component {
 
   }//end populateDirectionDropDown
 
+  //function to handle selection of directoin
+  handleDirectionChange = (event) => {
+    console.log('in handleDirectionChange', event.target.value);
+
+    let chosenDirection = event.target.value;
+
+    this.setState({
+      chosenDirection: chosenDirection,
+    });
+
+  }//end handleDirectonChange
+
   render() {
     return (
       <div className="App">
@@ -140,7 +151,7 @@ class App extends Component {
             </select>
             {/* drop down to be populated and enabled when route is selected */}
             <label htmlFor="#directionDropDown">Direction</label>
-            <select id="directionDropDown">
+            <select id="directionDropDown" onChange={this.handleDirectionChange}>
               <option disabled selected>Choose Direction</option>
             </select>
           </form>

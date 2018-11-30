@@ -9,10 +9,13 @@ const getRouteDirections = require('./index.js').getRouteDirections;
 //directions test response
 const testResponse = require('./testResponse');
 
+//get stops for route and direction
+const getStops = require('./index.js').getStops;
+
 //tests to make sure getting data from metro transit api will work
 describe('Get route info tests', () => {
     it('Get todays routes', () => {
-        return getRoutes().then(response => {
+        return getRoutes().then((response) => {
             //expect an object back
             expect(typeof response).to.equal('object');
         });
@@ -46,6 +49,28 @@ describe('Get route info tests', () => {
                 });
         });
     });
+
+    describe('Get stops for route', () => {
+        beforeEach(() => {
+            nock('https://svc.metrotransit.org')
+                .get('/NexTrip/Stops/901/4?format=json')
+                .reply(200, testResponse);
+        });
+
+        it('Get stops for direction and route', () => {
+            return getStops('901', '4')
+                .then((response) => {
+                    //check that test response is an object
+                    expect(typeof testResponse).to.equal('object');
+
+                    //failing test
+                    //expect(testResponse.stopsResponse[0].Value).to.equal('hello')
+                
+                    //passing test
+                    expect(testResponse.stopsResponse[0].Value).to.equal('MAAM')
+                });
+        });
+    })
     
 });
 
