@@ -92,5 +92,92 @@ module.exports = {
             Text: "Target Field Station Platform 2",
             Value: "TF21"
         }
+    ],
+
+    timeResponse: [
+        {
+            Actual: true,
+            BlockNumber: 166,
+            DepartureText: "Due",
+            DepartureTime: "/Date(1543617780000-0600)/",
+            Description: "Blue Line to Mpls-Target Field",
+            Gate: "1",
+            Route: "Blue",
+            RouteDirection: "NORTHBOUND",
+            Terminal: "",
+            VehicleHeading: 0,
+            VehicleLatitude: 44.854571,
+            VehicleLongitude: -93.238714
+        },
+        {
+            Actual: false,
+            BlockNumber: 168,
+            DepartureText: "4:53",
+            DepartureTime: "/Date(1543618380000-0600)/",
+            Description: "Blue Line to Mpls-Target Field",
+            Gate: "1",
+            Route: "Blue",
+            RouteDirection: "NORTHBOUND",
+            Terminal: "",
+            VehicleHeading: 0,
+            VehicleLatitude: 0,
+            VehicleLongitude: 0
+        },
+        {
+            Actual: false,
+            BlockNumber: 170,
+            DepartureText: "5:03",
+            DepartureTime: "/Date(1543618980000-0600)/",
+            Description: "Blue Line to Mpls-Target Field",
+            Gate: "1",
+            Route: "Blue",
+            RouteDirection: "NORTHBOUND",
+            Terminal: "",
+            VehicleHeading: 0,
+            VehicleLatitude: 0,
+            VehicleLongitude: 0
+        },
+        {
+            Actual: false,
+            BlockNumber: 172,
+            DepartureText: "5:13",
+            DepartureTime: "/Date(1543619580000-0600)/",
+            Description: "Blue Line to Mpls-Target Field",
+            Gate: "1",
+            Route: "Blue",
+            RouteDirection: "NORTHBOUND",
+            Terminal: "",
+            VehicleHeading: 0,
+            VehicleLatitude: 0,
+            VehicleLongitude: 0
+        },
+        {
+            Actual: false,
+            BlockNumber: 174,
+            DepartureText: "5:23",
+            DepartureTime: "/Date(1543620180000-0600)/",
+            Description: "Blue Line to Mpls-Target Field",
+            Gate: "1",
+            Route: "Blue",
+            RouteDirection: "NORTHBOUND",
+            Terminal: "",
+            VehicleHeading: 0,
+            VehicleLatitude: 0,
+            VehicleLongitude: 0
+        },
+        {
+            Actual: false,
+            BlockNumber: 176,
+            DepartureText: "5:33",
+            DepartureTime: "/Date(1543620780000-0600)/",
+            Description: "Blue Line to Mpls-Target Field",
+            Gate: "1",
+            Route: "Blue",
+            RouteDirection: "NORTHBOUND",
+            Terminal: "",
+            VehicleHeading: 0,
+            VehicleLatitude: 0,
+            VehicleLongitude: 0
+        }
     ]
 }

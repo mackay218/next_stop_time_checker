@@ -21,5 +21,11 @@ module.exports = {
         console.log('in getStops');
 
         return axios.get(`https://svc.metrotransit.org/NexTrip/Stops/${routeNum}/${directionNum}?format=json`);
-    }//end getStops
+    },//end getStops
+
+    getTime(routeNum, directionNum, stopId) {
+        console.log('in getTime');
+
+        return axios.get(`https://svc.metrotransit.org/NexTrip/${routeNum}/${directionNum}/${stopId}?format=json`);
+    }//end getTime
 }

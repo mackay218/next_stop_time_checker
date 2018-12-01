@@ -12,6 +12,9 @@ const testResponse = require('./testResponse');
 //get stops for route and direction
 const getStops = require('./index.js').getStops;
 
+//get time until next bus/train arrives
+const getTime = require('./index.js').getTime;
+
 //tests to make sure getting data from metro transit api will work
 describe('Get route info tests', () => {
     it('Get todays routes', () => {
@@ -70,8 +73,27 @@ describe('Get route info tests', () => {
                     expect(testResponse.stopsResponse[0].Value).to.equal('MAAM')
                 });
         });
-    })
+    });
     
+    describe('Get time until next bus/train', () => {
+        beforeEach(() => {
+            nock('https://svc.metrotransit.org')
+                .get('/NexTrip/901/4/MAAM?format=json')
+                .reply(200, testResponse);
+        });
+
+        it('Get time until next bus/train', () => {
+            return getTime('901', '4', 'MAAM')
+                .then((response) => {
+                    //check that test response is an object
+                    expect(typeof testResponse).to.equal('object');
+                    
+                    expect(testResponse.timeResponse[0].Actual).to.equal(true);
+
+
+                });
+        });
+    });
 });
 
 
