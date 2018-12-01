@@ -15,7 +15,7 @@
 
 ## Running Application
 
-1. Try hosted Demo [here]
+1. Try hosted Demo [here](https://next-stop-time-checker.herokuapp.com/)
     1. Select a route from the route drop down
     2. Select a stop from the stop drop down
     3. Select a directon from the directon drop down
