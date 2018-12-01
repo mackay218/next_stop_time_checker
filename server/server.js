@@ -7,6 +7,9 @@ const nextStopRouter = require('./routes/nextStop.router');
 //check that server is up and running
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
+// Serve static files
+app.use(express.static('build'));
+
 // Body parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
