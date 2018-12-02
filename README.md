@@ -30,6 +30,10 @@
 
     The result will be logged to the console.
 
+3. To run the GUI on your computer
+    1. Make sure you have Nodemon installed
+    2. run ```npm run server``` and then ```npm run client``` in terminal
+
 ### Testing
 
 - In terminal run ```npm test```
