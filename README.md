@@ -37,3 +37,11 @@
 ### Testing
 
 - In terminal run ```npm test```
+
+## Next Steps
+
+- responsive layout and styling
+- test for edge cases
+- diable or give notifications possible choices that will never have a result 
+    because the bus/train does not extend in that direction from the last stop on the line.
+    e.g. "METRO GEEN Line" "Target Field Station Platform 2" "West"  
