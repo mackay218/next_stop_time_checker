@@ -10,8 +10,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/api/nextStopRouter', nextStopRouter);
 
 
-// express static file serving - public is the folder name
-app.use(express.static('server/public'));
+// serve static files
+app.use(express.static('build'));
 
 const port = process.env.PORT || 5000;
 
