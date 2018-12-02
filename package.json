@@ -9,7 +9,6 @@
     "express": "^4.16.4",
     "mocha": "^5.2.0",
     "moment": "^2.22.2",
-    "nodemon": "^1.18.7",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-scripts": "2.1.1"
@@ -35,7 +34,8 @@
   "main": "index.js",
   "devDependencies": {
     "chai": "^4.2.0",
-    "nock": "^10.0.2"
+    "nock": "^10.0.2",
+    "nodemon": "^1.18.7"
   },
   "author": "Daniel MacKay",
   "license": "ISC"
