@@ -1,6 +1,6 @@
 # Next Stop Time Checker
 
-An application to get the time in minutes before the next bus or train arrives 
+An application to get the time in minutes before the next bus or train departs 
 at the users stop on their chosen route and going their chosen direction.
 
 ## Built with
