@@ -1,10 +1,14 @@
 # Next Stop Time Checker
 
+An application to get the time in minutes before the next bus or train arrives 
+at the users stop on their chosen route and going their chosen direction.
+
 ## Built with
 - ReactJS
 - NodeJS/ExpressJS
 - MomentJS
 - Axios
+- Metrotansit API
 
 
 ## Setup
