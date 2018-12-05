@@ -1,4 +1,3 @@
-const axios = require('axios');
 const expect = require('chai').expect;
 const nock = require('nock');
 
