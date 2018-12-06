@@ -89,7 +89,6 @@ describe('Get route info tests', () => {
                     
                     expect(testResponse.timeResponse[0].Actual).to.equal(true);
 
-
                 });
         });
     });

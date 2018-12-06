@@ -245,17 +245,26 @@ class App extends Component {
     let chosenDirection = this.state.chosenDirection;
     let chosenStop = this.state.chosenStop;
 
-    axios.get(`/api/nextStopRouter/time/${chosenRoute}/${chosenDirection}/${chosenStop}`)
-      .then((response) => {
-        console.log(response.data);
+    //make sure user has chosen all needed parameters
+    if(chosenRoute != '' && chosenDirection != '' && chosenStop != ''){
+      axios.get(`/api/nextStopRouter/time/${chosenRoute}/${chosenDirection}/${chosenStop}`)
+        .then((response) => {
+          console.log(response.data);
 
-        this.handleResponse(response.data);
+          this.handleResponse(response.data);
 
-      })
-      .catch((error) => {
-        console.log('error getting time until next bus/train', error);
-        alert('error getting time until next bus/train', error);
-      });
+        })
+        .catch((error) => {
+          console.log('error getting time until next bus/train', error);
+          alert('error getting time until next bus/train', error);
+        });
+
+    }
+    else{
+      console.log('please choose a route, stop, and direction');
+      alert('please choose a route stop and direction');
+    }
+    
   }//end handleSubmit
 
   //function to handle response for getting next time of bus/train
@@ -296,12 +305,9 @@ class App extends Component {
         //remove beginning of string e.g. "in"
         time = time.substring(3, time.length);
         
-
         responseDisplay.innerHTML = time;
       }
-      
     }
-
   }//end handleResponse
 
   render() {
