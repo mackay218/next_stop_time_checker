@@ -106,6 +106,7 @@ try{
 
     }//end getStopInfo
 
+    //function to getTime when next bus/train leaves
     getTime = (routeNum, directionNum, stopId)=> {
         //console.log('in getTime');
         axios.get(`https://svc.metrotransit.org/NexTrip/${routeNum}/${directionNum}/${stopId}?format=json`)
@@ -120,7 +121,9 @@ try{
                 else if (response.data.length > 0) {
                     let nextBusTrain = response.data[0];
 
+                    //if actual depart time is known
                     if (nextBusTrain.Actual) {
+                        
                         if (nextBusTrain.DepartureText === 'Due') {
                             
                             time = 'Any minute';
