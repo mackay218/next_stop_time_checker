@@ -44,6 +44,7 @@ at the users stop on their chosen route and going their chosen direction.
 
 ## Next Steps
 
+- refactor code
 - responsive layout and styling
 - testing for edge cases
 - disable or give notifications possible choices that will never have a result 

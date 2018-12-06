@@ -214,14 +214,14 @@ class App extends Component {
     //clear previous options
     this.clearOptions('stopDropDown');
 
-    //call fucntion to populate drop down
+    //call function to populate drop down
     this.populateDropDown('stopDropDown', stopsArr, 'Value', 'Text');
 
     let stopDropDown = document.getElementById('stopDropDown');
 
     //enable stop dropdown
     stopDropDown.disabled = false;
-  }
+  }//end populateStopDropDown
 
   //function to handle selection of stop
   handleStopChange = (event) => {
