@@ -290,9 +290,12 @@ class App extends Component {
       else{
         //round time to minutes
         moment.relativeTimeThreshold('m', 60);
-
+        
         time = moment(nextBusTrain.DepartureTime).fromNow();
+        
+        //remove beginning of string e.g. "in"
         time = time.substring(3, time.length);
+        
 
         responseDisplay.innerHTML = time;
       }

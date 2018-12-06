@@ -12,13 +12,13 @@ chosenDirection = chosenDirection.toUpperCase();
 try{
     //make sure correct arguments are input
     if(process.argv.length != 5){
-        throw "please enter the correct arguments a metrotransit route, stop, and direction";
+        throw "please enter the correct arguments: a metrotransit route, stop, and direction";
     }
     else{
         getRoutes();
     }
 
-    //function to get all routes available transit routes
+    //function to get all favailable transit routes
     function getRoutes(){
         //console.log('in getRoutes');
         axios.get(`https://svc.metrotransit.org/NexTrip/Routes?format=json`)
@@ -64,6 +64,7 @@ try{
             
                 let directionArr = response.data; 
 
+                //iterate over direction data to check agains chosenDirection
                 for(let i = 0; i < directionArr.length; i++){
                     if (directionArr[i].Text.includes(chosenDirection)){
                         
@@ -72,7 +73,8 @@ try{
                         return directionArr[i].Value;
                     }
                 }
-                    console.log('direction not found');
+                //if loop completes and no match is found
+                console.log('direction not found');
             })
             .catch((error) => {
                 console.log('error getting direction info', error);
@@ -85,6 +87,8 @@ try{
         axios.get(`https://svc.metrotransit.org/NexTrip/Stops/${routeNum}/${directionNum}?format=json`)
             .then((response) => {
                 let stopArr = response.data;
+
+                //iterate over stop info data to check against chosenStop
                 for(let i = 0; i < stopArr.length; i++){
                     if(chosenStop === stopArr[i].Text){
                         
@@ -92,11 +96,9 @@ try{
                         getTime(routeNum, directionNum, stopArr[i].Value);
                         return stopArr[i].Value;
                     }
-                    else if(i = stopArr.length - 1){
-                        console.log('stop not found');
-                    }
                 }
-
+                //if loop completes and no match is found
+                console.log('stop not found');
             })
             .catch((error) => {
                 console.log('error getting stop info', error);
